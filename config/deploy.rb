@@ -19,7 +19,7 @@ set :repository, ENV['DEPLOY_REPOSITORY']
 set :branch, ENV['DEPLOY_BRANCH']
 
 # For system-wide RVM install.
-#   set :rvm_path, '/usr/local/rvm/bin/rvm'
+set :rvm_path, '/usr/local/rvm/bin/rvm'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
@@ -37,10 +37,10 @@ set :notify_airbrake, ENV['AIRBRAKE_DEPLOY_NOTIFICATION'] == 'true'
 task :environment do
   # If you're using rbenv, use this to load the rbenv environment.
   # Be sure to commit your .ruby-version or .rbenv-version to your repository.
-  invoke :'rbenv:load'
+  # invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
-  # invoke :'rvm:use[ruby-1.9.3-p125@default]'
+  invoke :'rvm:use[ruby-1.9.3-p125@default]'
 end
 
 # Put any custom mkdir's in here for when `mina setup` is ran.
