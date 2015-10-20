@@ -73,6 +73,58 @@ If you are interested in the old version, see the [1.0 branch](https://github.co
     bundle exec sidekiq
     ```
 
+
+## Server Setup
+
+1. Create Deployer user
+
+    https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04
+
+
+2. Install bundler
+
+    sudo apt-get install bundler
+
+
+3. Install RVM
+
+    gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+    \curl -sSL https://get.rvm.io | bash -s stable --rails
+
+
+4.  Install proper rubies
+
+    rvm install ruby-1.9.3-p125
+    rvm use 1.9.3-p125
+
+
+5.  Install bundler gem
+
+    sudo gem install bundler
+
+
+5. Install Postgres
+
+    https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-14-04
+    *set username to 'deployer'
+    *make superuser
+
+    sudo apt-get install libpq-dev
+
+
+6. Install git
+
+    sudo apt-get update
+    sudo apt-get install git
+
+    Or if new to git see: https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04
+
+
+7. Install node.js
+
+    sudo apt-get update
+    sudo apt-get install nodejs
+
 ## Contributing
 
 1. Fork it
