@@ -1,0 +1,31 @@
+<div class="Reservations">
+  <table class="Table">
+    <thead>
+      <tr>
+        <th>Confirmation<span class='Table-no-mobile'> number</span></th>
+        <th>Date</th>
+        <th>Traveling to</th>
+        <th class='Table-no-mobile'>Passengers</th>
+        <th>Checkins</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @reservations.each do |reservation| %>
+        <%= render 'reservations/reservation_row', reservation: reservation %>
+      <% end %>
+      <% if @reservations.empty? %>
+        <tr>
+          <td><strong>You have no reservations.</strong></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <div class="Reservations-actions">
+    <%= paginate @reservations %>
+    <%= link_to 'Add a Reservation', new_reservation_path, class: 'GhostButtonLink' %>
+  </div>
+</div>

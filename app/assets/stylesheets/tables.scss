@@ -1,0 +1,34 @@
+.Table {
+  @extend %smallest-font-size;
+  width: 100%;
+  border-collapse: separate;
+  border-top: $Form-border-width solid $Form-border-color;
+  border-bottom: $Form-border-width solid $Form-border-color;
+
+  th {
+    @extend %header;
+    text-align: left;
+    border-bottom: $Form-border-width solid $Form-border-color;
+  }
+
+  th,
+  td {
+    padding: 15px 0;
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 15px;
+  }
+
+  @include tablet-portrait-and-up {
+    border-radius: 6px;
+    border: $Form-border-width solid $Form-border-color;
+  }
+}
+
+.Table-no-mobile {
+  @include below-tablet-portrait {
+    display: none;
+  }
+}
